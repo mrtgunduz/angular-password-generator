@@ -6,44 +6,68 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  includeLetters:boolean = false;
-  includeNumbers:boolean = false;
-  includeSymbols:boolean = false;
+  includeLetters: boolean = false;
+  includeNumbers: boolean = false;
+  includeSymbols: boolean = false;
   length: number = 0;
-
+  password = '';
   modifyLength(event: Event) {
     const filtervalue = (event.target as HTMLInputElement).value;
     const parsedValue = parseInt(filtervalue);
-    
-    if(!isNaN(parsedValue))
-     {
+
+    if (!isNaN(parsedValue)) {
       debugger;
-this.length = parsedValue;
-     }
-
-
-
+      this.length = parsedValue;
+    }
   }
 
   modifyNumbers() {
- this.includeNumbers = !this.includeNumbers;
+    this.includeNumbers = !this.includeNumbers;
   }
 
   modifySymbols() {
     this.includeSymbols = !this.includeSymbols;
   }
 
-
   modifyLetters() {
-this.includeLetters = !this.includeLetters;
-// console.log(this.includeLetters);
+    this.includeLetters = !this.includeLetters;
+    // console.log(this.includeLetters);
   }
 
   buttonClick() {
-    console.log(`Değerlerim;
-    Letters : ${this.includeLetters}
-    Numbers : ${this.includeNumbers}
-    Symbols : ${this.includeSymbols}
-    `);
-  }
+    const numbers='1234567890';
+    const letters='abcdefghijklmnopqrstuvwyz';
+    const symbols='!@#$%^&*()';
+ 
+    let validChars='';
+ 
+    if(this.includeLetters)
+    {
+      validChars += letters;
+    }
+    if(this.includeNumbers)
+    {
+      validChars += numbers;
+    }
+    if(this.includeSymbols)
+    {
+      validChars += symbols;
+    }
+ 
+    let generatedPassword = '';
+    for(let i=0; i<this.length;i++)
+    {
+      const index=Math.floor(Math.random()*validChars.length);
+      generatedPassword +=validChars[index];
+    }
+ 
+    this.password=generatedPassword;
+ 
+ 
+ 
+ 
+ 
+ 
+   }
+ 
 }

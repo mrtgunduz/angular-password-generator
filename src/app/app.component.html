@@ -12,12 +12,12 @@
 
 <div>
   <label>Sayıları Kullan</label>
-  <input (change)="modifyNumbers" type="checkbox" />
+  <input (change)="modifyNumbers()" type="checkbox" />
 </div>
 
 <div>
   <label>Sembolleri Kullan </label>
-  <input (change)="modifySymbols" type="checkbox" />
+  <input (change)="modifySymbols()" type="checkbox" />
 </div>
 
 <div>
@@ -26,5 +26,5 @@
 
 <div>
   <label>Şifreniz </label>
-  <input />
+  <input [value]="password" />
 </div>
