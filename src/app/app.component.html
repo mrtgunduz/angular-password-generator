@@ -7,17 +7,17 @@
 
 <div>
   <label>Alfabeyi Kullan</label>
-  <input type="checkbox" />
+  <input (change)="modifyLetters()" type="checkbox" />
 </div>
 
 <div>
   <label>Sayıları Kullan</label>
-  <input type="checkbox" />
+  <input (change)="modifyNumbers" type="checkbox" />
 </div>
 
 <div>
-  <label>Sembolleri Kullan</label>
-  <input type="checkbox" />
+  <label>Sembolleri Kullan </label>
+  <input (change)="modifySymbols" type="checkbox" />
 </div>
 
 <div>
@@ -26,5 +26,5 @@
 
 <div>
   <label>Şifreniz </label>
-  <input [value]="password"/>
+  <input />
 </div>

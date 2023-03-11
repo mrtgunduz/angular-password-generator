@@ -3,18 +3,32 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'example-project-angular';
-  password = 'Murat';
+  includeLetters:boolean = false;
+  includeNumbers:boolean = false;
+  includeSymbols:boolean = false;
 
-  buttonClick() {
-    this.password = "test";
-    console.log("Event Bindingi ögreniyoruz");
+  modifyNumbers() {
+ this.includeNumbers = !this.includeNumbers;
   }
 
-  getPassword () {
-    return this.password;
+  modifySymbols() {
+    this.includeSymbols = !this.includeSymbols;
+  }
+
+
+  modifyLetters() {
+this.includeLetters = !this.includeLetters;
+// console.log(this.includeLetters);
+  }
+
+  buttonClick() {
+    console.log(`Değerlerim;
+    Letters : ${this.includeLetters}
+    Numbers : ${this.includeNumbers}
+    Symbols : ${this.includeSymbols}
+    `);
   }
 }
