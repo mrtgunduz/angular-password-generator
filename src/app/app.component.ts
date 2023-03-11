@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'example-project-angular';
+  password = 'Murat';
+
+  buttonClick() {
+    this.password = "test";
+    console.log("Event Bindingi ögreniyoruz");
+  }
+
+  getPassword () {
+    return this.password;
+  }
 }
