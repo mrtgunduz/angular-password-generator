@@ -9,6 +9,21 @@ export class AppComponent {
   includeLetters:boolean = false;
   includeNumbers:boolean = false;
   includeSymbols:boolean = false;
+  length: number = 0;
+
+  modifyLength(event: Event) {
+    const filtervalue = (event.target as HTMLInputElement).value;
+    const parsedValue = parseInt(filtervalue);
+    
+    if(!isNaN(parsedValue))
+     {
+      debugger;
+this.length = parsedValue;
+     }
+
+
+
+  }
 
   modifyNumbers() {
  this.includeNumbers = !this.includeNumbers;
