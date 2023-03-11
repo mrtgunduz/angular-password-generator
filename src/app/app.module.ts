@@ -6,15 +6,9 @@ import { AppComponent } from './app.component';
 import { RandomgeneratedpasswordComponent } from './randomgeneratedpassword/randomgeneratedpassword.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RandomgeneratedpasswordComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, RandomgeneratedpasswordComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
